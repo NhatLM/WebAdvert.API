@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>NhatLe</Authors>
+    <Company>None</Company>
+    <Product>Web.Advert.Microservices</Product>
+    <PackageProjectUrl>https://github.com/NhatLM/WebAdvert.API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NhatLM/WebAdvert.API</RepositoryUrl>
+    <PackageId>AdvertAPI.Model.LMN</PackageId>
+  </PropertyGroup>
+
+</Project>
