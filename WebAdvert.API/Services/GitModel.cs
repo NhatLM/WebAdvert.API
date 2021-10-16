@@ -7,7 +7,7 @@ namespace WebAdvert.API.Services
 {
     public class GitModel
     {
-        ////
+        ////abcdsdsdsasd
         public string MainProp { get; set; }
     }
 }
