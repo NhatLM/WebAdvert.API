@@ -25,5 +25,7 @@ namespace WebAdvert.API.Services
         ///
         ///abshdgreje
         public string GitRebaseInteractiveProp { get; set; }
+
+        public string GitDemoProp1 { get; set; }
     }
 }
