@@ -11,5 +11,7 @@ namespace WebAdvert.API.Services
         public string MainProp { get; set; }
 
         public string GitDemoProp1 { get; set; }
+
+        ///asdasd
     }
 }
