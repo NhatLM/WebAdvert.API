@@ -22,5 +22,8 @@ namespace WebAdvert.API.Services
 
 
         public string GitResetProp { get; set; }
+        ///
+        ///abshdgreje
+        public string GitRebaseInteractiveProp { get; set; }
     }
 }
