@@ -9,5 +9,7 @@ namespace WebAdvert.API.Services
     {
         ////abcdsdsdsasd
         public string MainProp { get; set; }
+
+        public string GitDemoProp1 { get; set; }
     }
 }
