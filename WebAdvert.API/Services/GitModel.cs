@@ -13,5 +13,12 @@ namespace WebAdvert.API.Services
         ///asdasd
         ///
         ///abshdgreje
+        ///
+        public string GitRebaseProp { get; set; }
+
+        //asdasdasdasdasd ammend
+
+
+        public string GitResetProp { get; set; }
     }
 }
