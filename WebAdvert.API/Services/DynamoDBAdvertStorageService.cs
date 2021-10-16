@@ -65,5 +65,14 @@ namespace WebAdvert.API.Services
                 }
             }
         }
+
+        public async Task<bool> CheckHealth()
+        {
+            using (var client = InitDynamoDBClient())
+            {
+                var tableData = await client.DescribeTableAsync("Adverts");
+                return string.Compare(tableData.Table.TableStatus, "active", true) == 0;
+            }
+        }
     }
 }

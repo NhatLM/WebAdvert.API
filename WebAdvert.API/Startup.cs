@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using AutoMapper;
 using WebAdvert.API.Services;
+using WebAdvert.API.HealthChecks;
 
 namespace WebAdvert.API
 {
@@ -30,6 +31,8 @@ namespace WebAdvert.API
             services.AddTransient<IAdvertStorageService, DynamoDBAdvertStorageService>();
             services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
+            services.AddHealthChecks()
+                .AddCheck<StorageHealthcheck>("storage health check");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +42,7 @@ namespace WebAdvert.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseHealthChecks("/health");
             app.UseHttpsRedirection();
 
             app.UseRouting();
