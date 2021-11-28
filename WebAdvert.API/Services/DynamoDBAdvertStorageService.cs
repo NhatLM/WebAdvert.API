@@ -3,6 +3,7 @@ using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,10 @@ namespace WebAdvert.API.Services
 
         private AmazonDynamoDBClient InitDynamoDBClient()
         {
-            string accessKey = Environment.GetEnvironmentVariable("WebAdvertAwsAccessKey");
-            string secretKey = Environment.GetEnvironmentVariable("WebAdvertAwsSecretKey");
-            string region = "ap-southeast-1";
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            string accessKey = config.GetValue<string>("WebAdvertAwsAccessKey");
+            string secretKey = config.GetValue<string>("WebAdvertAwsSecretKey");
+            string region = config.GetValue<string>("AwsRegion");
             return new AmazonDynamoDBClient(accessKey, secretKey, RegionEndpoint.GetBySystemName(region));
         }
         public async Task<string> Add(AdvertModel model)
